@@ -1,33 +1,82 @@
+// app/(tabs)/_layout.jsx
 import { Tabs } from 'expo-router';
-import React from 'react';
+import { Ionicons } from '@expo/vector-icons';
+import { SpecialButton } from '@/components/Button';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function TabsLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+    <Tabs 
+      screenOptions={{ 
+        headerShown: true,
+        tabBarStyle: {
+          position: 'absolute',
+          bottom: 20,
+          left: 20,
+          right: 20,
+          height: 70,
+          borderRadius: 35,
+          backgroundColor: 'white',
+          borderTopWidth: 0,
+          elevation: 5,
+          shadowColor: '#000',
+          shadowOffset: {
+            width: 0,
+            height: 2,
+          },
+          shadowOpacity: 0.25,
+          shadowRadius: 3.84,
+          paddingHorizontal: 10,
+        },
+        tabBarItemStyle: {
+          paddingVertical: 8,
+        },
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="Chat"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="chatbubble-outline" size={size} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="Status"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="time-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="custom"
+        options={{
+          tabBarButton: (props) => <SpecialButton {...props} />,
+        }}
+        listeners={{
+          tabPress: (e) => {
+            e.preventDefault();
+          }
+        }}
+      />
+      <Tabs.Screen
+        name="Calls"
+        options={{
+         headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="call-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="Profile"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" size={size} color={color} />
+          ),
         }}
       />
     </Tabs>
