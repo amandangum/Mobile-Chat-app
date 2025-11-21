@@ -100,6 +100,7 @@ function LoginScreen() {
             </View>
           </View>
         </View>
+
       </ScrollView>
     </SafeAreaView>
   );

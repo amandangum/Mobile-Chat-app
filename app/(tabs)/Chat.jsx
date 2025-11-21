@@ -13,7 +13,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
-
 const chatData = [
   {
     id: "1",
@@ -116,15 +115,14 @@ export default function ChatScreen() {
   const [searchQuery, setSearchQuery] = useState("");
   const [chats, setChats] = useState(chatData);
   const router = useRouter();
+  const [isFocused, setIsFocused] = useState(false);
 
   const filteredChats = chats.filter((chat) =>
     chat.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const renderChatItem = ({ item }) => (
-    <TouchableOpacity 
-    style={styles.chatItem}
-  >
+    <TouchableOpacity style={styles.chatItem}>
       <View style={styles.avatarContainer}>
         <Image source={{ uri: item.avatar }} style={styles.avatar} />
         {item.isOnline && <View style={styles.onlineIndicator} />}
@@ -192,7 +190,12 @@ export default function ChatScreen() {
 
       {/* Search Bar with Filter */}
       <View style={styles.searchSection}>
-        <View style={styles.searchContainer}>
+        <View
+          style={[
+            styles.searchContainer,
+            isFocused && { borderWidth: 1, borderColor: "#007bff" },
+          ]}
+        >
           <Ionicons
             name="search"
             size={20}
@@ -205,6 +208,8 @@ export default function ChatScreen() {
             value={searchQuery}
             onChangeText={setSearchQuery}
             placeholderTextColor="#999"
+            onFocus={() => setIsFocused(true)} // when user taps
+            onBlur={() => setIsFocused(false)} // when user leaves
           />
           {searchQuery.length > 0 && (
             <TouchableOpacity onPress={() => setSearchQuery("")}>
@@ -322,6 +327,8 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
     color: "#1a1a1a",
+    borderWidth: 0, // Remove border of the input
+    outlineWidth: 0,
   },
   filterButton: {
     width: 50,
@@ -341,9 +348,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#f0f0f0",
   },
-   quickActions: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  quickActions: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     paddingHorizontal: 20,
     marginBottom: 15,
   },
