@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     flex: 1,
-    fontSize: 16,
+    fontSize: 10,
     borderWidth: 0, // Remove border of the input
     outlineWidth: 0,
   },

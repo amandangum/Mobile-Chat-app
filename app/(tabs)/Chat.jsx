@@ -8,6 +8,7 @@ import {
   TextInput,
   Image,
   StatusBar,
+  ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
@@ -172,8 +173,9 @@ export default function ChatScreen() {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+  <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.scrollView}>
+    <StatusBar barStyle="dark-content" backgroundColor="#fff" />
 
       {/* Header */}
       <View style={styles.header}>
@@ -264,6 +266,7 @@ export default function ChatScreen() {
       <TouchableOpacity style={styles.fab}>
         <Ionicons name="chatbubble" size={24} color="white" />
       </TouchableOpacity>
+    </ScrollView>
     </SafeAreaView>
   );
 }
@@ -272,6 +275,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+  scrollView: {
+    flex: 1,
   },
   header: {
     flexDirection: "row",
