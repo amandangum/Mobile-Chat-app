@@ -18,7 +18,7 @@ const chatData = [
   {
     id: "1",
     name: "Sandra",
-    lastMessage: "Hey.....How are you doing?",
+    lastMessage: "Doing great!!!",
     timestamp: "10:30 AM",
     unreadCount: 2,
     avatar:
@@ -122,8 +122,8 @@ export default function ChatScreen() {
     chat.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const renderChatItem = ({ item }) => (
-    <TouchableOpacity style={styles.chatItem}>
+  const renderChatItem = ({ item, navigation }) => (
+    <TouchableOpacity style={styles.chatItem} onPress={() => router.push(`/chat/${item.id}`)}>
       <View style={styles.avatarContainer}>
         <Image source={{ uri: item.avatar }} style={styles.avatar} />
         {item.isOnline && <View style={styles.onlineIndicator} />}
@@ -174,7 +174,7 @@ export default function ChatScreen() {
 
   return (
   <SafeAreaView style={styles.container}>
-    <ScrollView style={styles.scrollView}>
+    <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
     <StatusBar barStyle="dark-content" backgroundColor="#fff" />
 
       {/* Header */}
@@ -262,10 +262,6 @@ export default function ChatScreen() {
         contentContainerStyle={styles.listContent}
       />
 
-      {/* New Chat Floating Button */}
-      <TouchableOpacity style={styles.fab}>
-        <Ionicons name="chatbubble" size={24} color="white" />
-      </TouchableOpacity>
     </ScrollView>
     </SafeAreaView>
   );
@@ -278,6 +274,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 100, 
   },
   header: {
     flexDirection: "row",
@@ -491,20 +490,5 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "bold",
   },
-  fab: {
-    position: "absolute",
-    bottom: 30,
-    right: 20,
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    backgroundColor: "#007bff",
-    justifyContent: "center",
-    alignItems: "center",
-    elevation: 4,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-  },
+  
 });

@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Image,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -140,6 +141,7 @@ export default function CallsScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent} >
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       
       {/* Header */}
@@ -195,11 +197,7 @@ export default function CallsScreen() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.listContent}
       />
-
-      {/* New Call Floating Button */}
-      <TouchableOpacity style={styles.fab}>
-        <Ionicons name="call" size={24} color="white" />
-      </TouchableOpacity>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -208,6 +206,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  scrollView: {
+     flex: 1
+  },
+  scrollContent: {
+    paddingBottom: 100, 
   },
   header: {
     flexDirection: 'row',
@@ -327,25 +331,5 @@ const styles = StyleSheet.create({
   timestamp: {
     fontSize: 12,
     color: '#666',
-  },
-  callButton: {
-    padding: 8,
-    marginLeft: 10,
-  },
-  fab: {
-    position: 'absolute',
-    bottom: 30,
-    right: 20,
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    backgroundColor: '#00a682',
-    justifyContent: 'center',
-    alignItems: 'center',
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
   },
 });

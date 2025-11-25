@@ -125,9 +125,11 @@ function Status() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+
+
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
         {/* Header */}
         <View style={styles.headerContainer}>
           <View style={styles.iconContainer}>
@@ -228,6 +230,9 @@ const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
   },
+  scrollContent: {
+    paddingBottom: 100, 
+  },
   headerContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -273,9 +278,9 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     flex: 1,
-    fontSize: 10,
+    fontSize: 16,
     borderWidth: 0, // Remove border of the input
-    outlineWidth: 0,
+    outlineWidth: 0
   },
   sectionHeader: {
     paddingHorizontal: 16,
@@ -300,7 +305,6 @@ const styles = StyleSheet.create({
     width: 70,
   },
   contactAvatarContainer: {
-    //position: "relative",
     marginBottom: 6,
   },
   contactAvatar: {
