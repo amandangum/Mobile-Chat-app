@@ -22,7 +22,7 @@ const chatData = [
     lastMessage: "Doing great!!!",
     timestamp: "10:30 AM",
     unreadCount: 2,
-    avatar: "data:image/jpeg;base64,...", // your base64 image
+    avatar: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxASEBAQEBIPEBAQDw8PEBAPDw8PDw8PFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGhAQFy0dHSItLS0tLS0tLS0tLS0tKysrLS0tKy0tLS0rKystLS0rLSstLS0tLS0tLS0tLS0tLS0tLf/AABEIARMAtwMBIgACEQEDEQH/xAAcAAAABwEBAAAAAAAAAAAAAAAAAQIDBAUGBwj/xAA6EAABAwIDBQUFBwQDAQAAAAABAAIDBBEFEiEGMUFRYRMicYGRIzJCobEHUnLB0eHwFBUzYiRDgrL/xAAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG/8QAKBEAAgICAgEDBAIDAAAAAAAAAAECEQMSITEEMkFREyJhcZGhBTOB/9oADAMBAAIRAxEAPwDIR0x5p+KkPNHGVJjRZOg7FSlOf0hRxqQxGwtCM6hNlCqcPKudUOxunsCgUEOGOupkGGOKvqakUxlKlsPQz8eFOVlS4e5pBCtGQKQxircl4wopHAJuoe8qUGJPZFLYPpmZr6Z5uqh1E66209OoT6RGw1BlLBTPtuSZKR/JaOOnsEHQJ7C0ZmhSu5JuajJ4LSOgUeVhRsLRmVfh55KPLQnktNI1RpAjYejMnLTEcE12ZsdFo5Ybpn+kU2UomVmYeSC0M9AeSNKyqFROCmwhZaCvVhBiKCjTRNUljVnI8U6qQzFhzSHRoWxp1kaoGYuOadZi45oCjTwBTGNWWhxkc1MZjI5oA0AanGtVC3GRzTDtpgw94jKgKNU1iV2azMO1IduGnM6KZFtAxyB0WkjFHcxQZsdjG9zR4kBMDGmHcQfC5QFFtkSHNUD+6t5pLsUHNAExzVHlYorsUHNNPxMIAOaNRJGI5cRCivrwgBRYlsjUU1wQbiAQKiS+NBRHV4QQM5226eY9y0+FbOCS2hK0EOwV+HzUNiRzrtHpJqH810Kp2Iy8CsvjGBmI9EJjKUVb+aWK1/NPwURcrBuBXG/VPZBqysbXv5p5uJSc1Nbs+++7RPy4OIgHO6fshSTHqxUMrrAucdRdV0kpc7Q6k7zw", 
     isOnline: true,
     messages: [
       { id: '1', text: 'Hey there! How are you doing?', isUser: false, timestamp: '10:25 AM' },
@@ -40,6 +40,68 @@ const chatData = [
     isOnline: false,
     messages: [
       { id: '1', text: 'When you get back home, make egg sauce', isUser: false, timestamp: 'Yesterday' },
+    ],
+  },
+
+  {
+    id: "3",
+    name: "Marilyne",
+    lastMessage: "Thank You for your help",
+    timestamp: "Yesterday",
+    unreadCount: 0,
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+    isOnline: false,
+    messages: [
+      { id: '1', text: 'Thank you for your Help', isUser: false, timestamp: 'Yesterday' },
+    ],
+  },
+
+  {
+    id: "4",
+    name: "Alex",
+    lastMessage: "Did you see the new design?",
+    timestamp: "16:00",
+    unreadCount: 2,
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face", // your base64 image
+    isOnline: true,
+    messages: [
+      { id: '1', text: 'Good afternoon Amanda', isUser: false, timestamp: '10:25 AM' },
+      { id: '2', text: 'Hi good afternoon', isUser: true, timestamp: '10:26 AM' },
+      { id: '3', text: 'How are you?', isUser: false, timestamp: '10:30 AM' },
+      { id: '4', text: 'I am fine and you?', isUser: true, timestamp: '10:30 AM' },
+      { id: '5', text: 'I am good too', isUser: false, timestamp: '10:30 AM' },
+      { id: '6', text: 'Okay good to hear', isUser: true, timestamp: '10:30 AM' },
+      { id: '7', text: 'Did you see the new design?', isUser: false, timestamp: '10:30 AM' },
+    ],
+  },
+
+  {
+    id: "5",
+    name: "Mr Ben",
+    lastMessage: "I am fine and you",
+    timestamp: "10:00 PM",
+    unreadCount: 2,
+    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face", // your base64 image
+    isOnline: true,
+    messages: [
+      { id: '1', text: 'Good afternoon Mr Ben, how are you doing today?', isUser: true, timestamp: '10:25 AM' },
+      { id: '2', text: 'Hi good afternoon', isUser: false, timestamp: '10:26 AM' },
+    ],
+  },
+  
+  {
+    id: "6",
+    name: "Abigial",
+    lastMessage: "Have you gone home already?",
+    timestamp: "10:30 AM",
+    unreadCount: 2,
+    avatar: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIVFhUXFxUXFxUVFxcVFRUVFxUWFhUVFxUYHSggGBolGxUXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQFy0dHR0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0rLS0tLS0tKy0tLS0rLS0tKy0tLSstLS0tLf/AABEIARMAtwMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAADAQIEBQYAB//EADsQAAEDAgMFBgQFAgYDAAAAAAEAAhEDIQQFMRJBUWFxBiKBkbHwE6HB0SMyQlLxYqIUcoKywuEHFpL/xAAYAQADAQEAAAAAAAAAAAAAAAAAAQIDBP/EACIRAQEAAgICAwEBAQEAAAAAAAABAhEhMQMSIkFRYXGBE//aAAwDAQACEQMRAD8AtgEVgQwiMWewK0J4CRiK1qQMIRWBK1qIGo0RWBLCcGpYTLYcJCiQkJCAZC7ZTgOCFUrAa2TB8JExz4QMVj20+B439UtmmjRV+NdYpMJmjKlgYPA28uI5oGYVbFK05OVC4ySiNCY0IgUNihcuXSgEKaU4lNKZGFcuK5AXwCexl05rUZjVWmJabVIaExjUZoT0CtCeAlaE8BCSAIdZ+yJRisx2sz8YZsi7zZo4c0WnJupWaZxTojaqP2eA3+W9ZTGduCTFKmSOLjsjyCxWOzB9V5fUcSfdhyUc4gmyndbTGTtrnduK40ps6y76lSsu/wDIF9mvTn+pu7w3rF02k6NJPE2CZWZHC" ,
+    isOnline: true,
+    messages: [
+      { id: '1', text: 'Hey hope you arrived', isUser: true, timestamp: '10:25 AM' },
+      { id: '2', text: 'Yess i did', isUser: false, timestamp: '10:26 AM' },
+      { id: '2', text: 'what about you?', isUser: false, timestamp: '10:26 AM' },
+      { id: '2', text: 'Have you gone home already?', isUser: false, timestamp: '10:26 AM' },
     ],
   },
  

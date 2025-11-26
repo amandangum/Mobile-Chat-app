@@ -68,7 +68,7 @@ const chatData = [
   {
     id: "6",
     name: "Abigial",
-    lastMessage: "Have you gone home already",
+    lastMessage: "Have you gone home already?",
     timestamp: "12/14/23",
     unreadCount: 0,
     avatar:
